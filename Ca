@@ -1,0 +1,59 @@
+  public class CalculatorTest {
+
+      private static final double EPS = 1e-9;
+
+      private void assertClose(double expected, double actual, String msg) {
+          if (Math.abs(expected - actual) > EPS) {
+              throw new RuntimeException(msg + " — expected " + expected + " but got " + actual);
+          }
+      }
+
+      public void test_add_positive() {
+          Calculator c = new Calculator();
+          assertClose(7.0, c.add(3, 4), "add(3, 4)");
+      }
+
+      public void test_add_negative_and_zero() {
+          Calculator c = new Calculator();
+          assertClose(-2.5, c.add(-5, 2.5), "add(-5, 2.5)");
+          assertClose(0.0, c.add(0, 0), "add(0, 0)");
+      }
+
+      public void test_subtract() {
+          Calculator c = new Calculator();
+          assertClose(6.0, c.subtract(10, 4), "subtract(10, 4)");
+          assertClose(-3.0, c.subtract(2, 5), "subtract(2, 5)");
+      }
+
+      public void test_multiply() {
+          Calculator c = new Calculator();
+          assertClose(12.0, c.multiply(3, 4), "multiply(3, 4)");
+          assertClose(0.0, c.multiply(0, 99), "multiply(0, 99)");
+          assertClose(-6.25, c.multiply(2.5, -2.5), "multiply(2.5, -2.5)");
+      }
+
+      public void test_divide_normal() {
+          Calculator c = new Calculator();
+          assertClose(2.5, c.divide(5, 2), "divide(5, 2)");
+          assertClose(-4.0, c.divide(-8, 2), "divide(-8, 2)");
+      }
+
+      public void test_divide_by_zero_throws() {
+          Calculator c = new Calculator();
+          try {
+              c.divide(10, 0);
+          } catch (IllegalArgumentException ex) {
+              return; // expected
+          } catch (Exception ex) {
+              throw new RuntimeException("divide(10, 0) threw " + ex.getClass().getSimpleName()
+                  + ", expected IllegalArgumentException");
+          }
+          throw new RuntimeException("divide(10, 0) did not throw — expected IllegalArgumentException");
+      }
+
+      public void test_mod() {
+          Calculator c = new Calculator();
+          if (c.mod(10, 3) != 1) throw new RuntimeException("mod(10, 3) should be 1");
+          if (c.mod(20, 5) != 0) throw new RuntimeException("mod(20, 5) should be 0");
+      }
+  }
