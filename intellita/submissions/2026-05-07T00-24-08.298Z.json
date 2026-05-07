@@ -1,0 +1,21 @@
+{
+  "activity_id": 5,
+  "activity_title": "TestJava",
+  "score": 100,
+  "max_score": 100,
+  "submitted_at": "2026-05-07T00:24:08.298Z",
+  "checkpoints": [
+    {
+      "id": 62,
+      "title": "Fix",
+      "type": "challenge",
+      "passed": true
+    },
+    {
+      "id": 63,
+      "title": "Fix",
+      "type": "challenge",
+      "passed": true
+    }
+  ]
+}

@@ -1,4 +1,3 @@
-<!-- intellita-grade:start -->
 # intelliTA Submission
 
 **Activity:** TestJava
@@ -11,9 +10,3 @@
 |---|-------|------|--------|
 | 1 | Fix | challenge | Pass |
 | 2 | Fix | challenge | Pass |
-
-<!-- intellita-grade:end -->
-
----
-
-**Test for java file**
