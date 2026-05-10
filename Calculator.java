@@ -7,17 +7,18 @@
 
       public double subtract(double a, double b) {
           // TODO: return a minus b
-          return a-b;
+          return 0;
       }
 
       public double multiply(double a, double b) {
           // TODO: return a times b
-          return a * b;
+          return 0;
       }
 
       public double divide(double a, double b) {
-         
-          return a / b;
+          // TODO: if b is 0, throw new IllegalArgumentException("Cannot divide by zero")
+          // otherwise return a / b
+          return 0;
       }
 
       public int mod(int a, int b) {
